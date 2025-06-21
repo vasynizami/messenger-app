@@ -3,4 +3,5 @@ export interface IMessage {
   phone_number: string;
   text: string;
   created_at: string;
+  status: string;
 }

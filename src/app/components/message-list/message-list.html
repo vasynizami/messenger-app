@@ -8,7 +8,16 @@
       <div class="timestamp-label">{{formatCreatedAt(message.created_at)}}</div>
     </div>
     <div class="message-item-text">{{message.text}}</div>
-    <div class="message-item-footer">{{getCharacterCount(message)}}</div>
+    <div class="message-item-footer">
+      @if(message.status === 'delivered'){
+      <div style="color: #228b22">Status: {{message.status}}</div>
+      <div style="color: #666666">{{getCharacterCount(message)}}</div>
+      } @else {
+      <div style="color: #666666; text-align: right; width: 100%">
+        {{getCharacterCount(message)}}
+      </div>
+      }
+    </div>
   </div>
   } }
 </div>

@@ -63,6 +63,7 @@ export class MessageForm implements OnInit {
             console.log('Message submitted successfully:', response);
             this.form.reset();
             this.messageSubmitted.emit();
+            this.pollMessageStatus();
           },
           error: (error) => {
             console.error('Error submitting message:', error);
@@ -70,6 +71,19 @@ export class MessageForm implements OnInit {
           },
         });
     }
+  }
+
+  private pollMessageStatus(): void {
+    setTimeout(() => {
+      this.messageService.getAll().subscribe({
+        next: (messages) => {
+          this.messageSubmitted.emit();
+        },
+        error: (error) => {
+          console.error('Error polling for message status:', error);
+        },
+      });
+    }, 30000);
   }
 
   public onClear() {
