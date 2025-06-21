@@ -32,6 +32,6 @@ export class MessageForm implements OnInit {
   }
 
   public onClear() {
-    console.log('submit', this.form.value());
+    this.form.reset();
   }
 }

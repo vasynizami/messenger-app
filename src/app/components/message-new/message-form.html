@@ -1,15 +1,29 @@
-<div>
+<div class="message-card">
   <h2>New Message</h2>
-  <form [formGroup]="form">
+  <form
+    [formGroup]="form"
+    class="message-form-container"
+    (ngSubmit)="onSubmit()"
+  >
+    <label for="phoneNumber" class="message-form-label">Phone Number</label>
     <input
+      id="phoneNumber"
       type="text"
       mask="(000) 000-0000"
       [formControlName]="'phoneNumber'"
+      class="phone-input"
     />
-    <textarea [formControlName]="'message'"></textarea>
-    <div>
-      <button (click)="onClear()">Clear</button>
-      <button (click)="onSubmit()">Submit</button>
+    <label for="message" class="message-form-label">Message</label>
+    <textarea
+      id="message"
+      rows="10"
+      class="text-input no-resize"
+      [formControlName]="'message'"
+    ></textarea>
+    <div class="char-count">0 / 250</div>
+    <div class="message-form-buttons">
+      <button type="button" class="clear-btn" (click)="onClear()">Clear</button>
+      <button type="submit" class="submit-btn">Submit</button>
     </div>
   </form>
 </div>
