@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject, tap } from 'rxjs';
 import { ApiService } from './api-service';
 
@@ -34,39 +33,32 @@ export class AuthService {
   public currentUser$ = this.currentUserSubject.asObservable();
 
   constructor(private apiService: ApiService) {
-    // Check if user is already logged in (e.g., token in localStorage)
     this.checkAuthStatus();
   }
 
-  signup(credentials: SignupCredentials): Observable<LoginResponse> {
+  public signup(credentials: SignupCredentials): Observable<LoginResponse> {
     return this.apiService.post('signup', credentials).pipe(
       tap((response: LoginResponse) => {
-        // Store token and user data after successful signup
         localStorage.setItem('auth_token', response.token);
         localStorage.setItem('user', JSON.stringify(response.user));
-
-        // Update authentication state
         this.isAuthenticatedSubject.next(true);
         this.currentUserSubject.next(response.user);
       })
     );
   }
 
-  login(credentials: LoginCredentials): Observable<LoginResponse> {
+  public login(credentials: LoginCredentials): Observable<LoginResponse> {
     return this.apiService.post('login', credentials).pipe(
       tap((response: LoginResponse) => {
-        // Store token
         localStorage.setItem('auth_token', response.token);
         localStorage.setItem('user', JSON.stringify(response.user));
-
-        // Update authentication state
         this.isAuthenticatedSubject.next(true);
         this.currentUserSubject.next(response.user);
       })
     );
   }
 
-  logout(): Observable<any> {
+  public logout(): Observable<any> {
     return this.apiService.post('logout', {}).pipe(
       tap(() => {
         localStorage.removeItem('auth_token');
@@ -87,11 +79,11 @@ export class AuthService {
     }
   }
 
-  getToken(): string | null {
+  public getToken(): string | null {
     return localStorage.getItem('auth_token');
   }
 
-  isLoggedIn(): boolean {
+  public isLoggedIn(): boolean {
     return this.isAuthenticatedSubject.value;
   }
 }
