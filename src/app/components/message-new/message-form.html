@@ -1,0 +1,15 @@
+<div>
+  <h2>New Message</h2>
+  <form [formGroup]="form">
+    <input
+      type="text"
+      mask="(000) 000-0000"
+      [formControlName]="'phoneNumber'"
+    />
+    <textarea [formControlName]="'message'"></textarea>
+    <div>
+      <button (click)="onClear()">Clear</button>
+      <button (click)="onSubmit()">Submit</button>
+    </div>
+  </form>
+</div>
