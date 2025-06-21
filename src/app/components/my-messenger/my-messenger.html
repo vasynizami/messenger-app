@@ -1,7 +1,13 @@
 <div class="main">
   <h1 class="title">My SMS Messenger</h1>
   <div class="cards">
-    <app-message-form></app-message-form>
-    <app-message-list [messages$]="messages$"></app-message-list>
+    <app-message-form
+      [characterLimit]="CHARACTER_LIMIT"
+      (messageSubmitted)="onMessageSubmitted()"
+    ></app-message-form>
+    <app-message-list
+      [messages$]="messages$"
+      [characterLimit]="CHARACTER_LIMIT"
+    ></app-message-list>
   </div>
 </div>

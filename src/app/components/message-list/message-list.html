@@ -3,11 +3,11 @@
   @for(message of (messages$|async); track message.id) {
   <div class="message-item">
     <div class="message-item-header">
-      <div class="phone-label">phone number</div>
-      <div class="timestamp-label">date</div>
+      <div class="phone-label">{{formatPhoneNumber(message.phoneNumber)}}</div>
+      <div class="timestamp-label">{{formatCreatedAt(message.createdAt)}}</div>
     </div>
     <div class="message-item-text">{{message.text}}</div>
-    <div class="message-item-footer">87/250</div>
+    <div class="message-item-footer">{{getCharacterCount(message)}}</div>
   </div>
   }
 </div>

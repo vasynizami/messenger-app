@@ -22,13 +22,13 @@ export class ApiService {
         id: 1,
         phoneNumber: '7771112233',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
-        timestamp: new Date().toISOString(),
+        createdAt: new Date().toISOString(),
       },
       {
         id: 2,
         phoneNumber: '7771112233',
         text: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.',
-        timestamp: new Date().toISOString(),
+        createdAt: new Date().toISOString(),
       },
     ]);
   }
