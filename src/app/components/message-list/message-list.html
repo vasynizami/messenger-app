@@ -1,13 +1,14 @@
 <div class="card">
-  <h2>Message History (23)</h2>
-  @for(message of (messages$|async); track message.id) {
+  @if (messages$ | async; as messages) {
+  <h2>Message History ({{messages.length}})</h2>
+  @for(message of messages; track message.id) {
   <div class="message-item">
     <div class="message-item-header">
-      <div class="phone-label">{{formatPhoneNumber(message.phoneNumber)}}</div>
-      <div class="timestamp-label">{{formatCreatedAt(message.createdAt)}}</div>
+      <div class="phone-label">{{formatPhoneNumber(message.phone_number)}}</div>
+      <div class="timestamp-label">{{formatCreatedAt(message.created_at)}}</div>
     </div>
     <div class="message-item-text">{{message.text}}</div>
     <div class="message-item-footer">{{getCharacterCount(message)}}</div>
   </div>
-  }
+  } }
 </div>

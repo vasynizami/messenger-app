@@ -46,11 +46,11 @@ export class MessageForm implements OnInit {
       this.isSubmitting = true;
       this.submitError = null;
 
-      const formData = this.form.value();
+      const formData = this.form.value;
 
       this.messageService
         .create({
-          phoneNumber: formData.phoneNumber,
+          phone_number: formData.phoneNumber,
           text: formData.message,
         })
         .pipe(

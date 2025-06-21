@@ -1,5 +1,8 @@
 <div class="main">
-  <h1 class="title">My SMS Messenger</h1>
+  <div class="header">
+    <h1 class="title">My SMS Messenger</h1>
+    <button class="logout-btn" (click)="onLogout()">Logout</button>
+  </div>
   <div class="cards">
     <app-message-form
       [characterLimit]="CHARACTER_LIMIT"

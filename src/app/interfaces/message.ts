@@ -1,6 +1,6 @@
 export interface IMessage {
   id: number;
-  phoneNumber: string;
+  phone_number: string;
   text: string;
-  createdAt: string;
+  created_at: string;
 }

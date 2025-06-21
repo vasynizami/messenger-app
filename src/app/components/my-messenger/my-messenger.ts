@@ -3,6 +3,7 @@ import { MessageForm } from '../message-form/message-form';
 import { MessageList } from '../message-list/message-list';
 import { IMessage } from '../../interfaces/message';
 import { MessageService } from '../../services/message-service';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -14,6 +15,7 @@ import { Observable } from 'rxjs';
 export class MyMessenger implements OnInit {
   readonly CHARACTER_LIMIT = 250;
   private service = inject(MessageService);
+  private router = inject(Router);
   public messages$!: Observable<IMessage[]>;
 
   ngOnInit() {
@@ -26,5 +28,9 @@ export class MyMessenger implements OnInit {
 
   public onMessageSubmitted() {
     this.loadMessages();
+  }
+
+  public onLogout() {
+    this.router.navigate(['/logout']);
   }
 }

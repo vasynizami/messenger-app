@@ -21,10 +21,17 @@ export class MessageService {
   }
 
   public create(messageData: {
-    phoneNumber: string;
+    phone_number: string;
     text: string;
   }): Observable<IMessage> {
-    return this.apiService.post('/messages', messageData).pipe(
+    const payload = {
+      message: {
+        phone_number: messageData.phone_number,
+        text: messageData.text,
+      },
+    };
+
+    return this.apiService.post('/messages', payload).pipe(
       catchError((err) => {
         console.error('Error creating message:', err);
         throw err;
