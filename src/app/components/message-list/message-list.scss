@@ -1,0 +1,48 @@
+.message {
+  &-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+    margin-bottom: 32px;
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-text {
+      padding: 6px 10px;
+      height: 40px;
+      border-radius: 7px;
+      vertical-align: middle;
+      white-space: normal;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      box-shadow: none;
+      border: 1px solid #a4a4a4;
+      outline: none;
+      background: white;
+      font-family: inherit;
+      font-size: inherit;
+    }
+
+    &-footer {
+      text-align: right;
+      font-size: 0.9rem;
+      color: #666666;
+      position: absolute;
+      bottom: -24px;
+      right: 0;
+    }
+  }
+}
+
+.phone-label {
+  font-weight: 700;
+}
+
+.timestamp-label {
+  font-size: 12px;
+}

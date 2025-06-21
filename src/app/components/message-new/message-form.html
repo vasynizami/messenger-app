@@ -1,4 +1,4 @@
-<div class="message-card">
+<div class="card">
   <h2>New Message</h2>
   <form
     [formGroup]="form"
@@ -20,7 +20,7 @@
       class="text-input no-resize"
       [formControlName]="'message'"
     ></textarea>
-    <div class="char-count">0 / 250</div>
+    <div class="message-form-container-footer">0 / 250</div>
     <div class="message-form-buttons">
       <button type="button" class="clear-btn" (click)="onClear()">Clear</button>
       <button type="submit" class="submit-btn">Submit</button>

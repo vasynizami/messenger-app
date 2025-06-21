@@ -1,21 +1,20 @@
 .message {
-  &-card {
-    display: flex;
-    flex-direction: column;
-    padding: 10px 20px;
-    border-radius: 15px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-  }
-
   &-form {
     &-container {
       position: relative;
       display: flex;
       flex-direction: column;
       gap: 16px;
-      width: 400px;
       font-size: 14px;
+
+      &-footer {
+        text-align: right;
+        font-size: 0.9rem;
+        color: #666666;
+        position: absolute;
+        bottom: 64px;
+        right: 0;
+      }
     }
 
     &-buttons {
@@ -42,15 +41,6 @@
 .no-resize {
   resize: none;
   overflow-y: auto;
-}
-
-.char-count {
-  text-align: right;
-  font-size: 0.9rem;
-  color: #666666;
-  position: absolute;
-  bottom: 64px;
-  right: 0;
 }
 
 .clear-btn {
