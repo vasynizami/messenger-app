@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npx http-server dist/messenger-app/browser -p $PORT -a 0.0.0.0 -c-1",
+    "start": "ng serve",
+    "start:prod": "npx http-server dist/messenger-app/browser -p $PORT -a 0.0.0.0 -c-1",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "postinstall": "ng build"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
@@ -39,6 +39,6 @@
     "karma-jasmine-html-reporter": "~2.1.0"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=22.12.0"
   }
 }
