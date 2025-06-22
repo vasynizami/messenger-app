@@ -9,10 +9,9 @@ export class ApiService {
   private http = inject(HttpClient);
 
   public error = new EventEmitter();
-  // public baseUrl = location.origin.includes('localhost')
-  //   ? 'http://my-deployed-server.com'
-  //   : location.origin;
-  public baseUrl = 'http://localhost:3000';
+  public baseUrl = location.origin.includes('localhost')
+    ? 'https://messenger-service-production-4d91.up.railway.app'
+    : location.origin;
   public token = '';
 
   public get(url: string): Observable<any> {
