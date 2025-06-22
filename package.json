@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npx http-server dist/messenger-app/browser -p $PORT -a 0.0.0.0",
+    "start": "npx http-server dist/messenger-app/browser -p $PORT -a 0.0.0.0 -c-1",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -17,17 +17,18 @@
     "@angular/forms": "^20.0.0",
     "@angular/platform-browser": "^20.0.0",
     "@angular/router": "^20.0.0",
+    "@angular/cli": "^20.0.3",
+    "@angular/compiler-cli": "^20.0.0",
+    "@angular/build": "^20.0.3",
     "moment": "^2.30.1",
     "ngx-mask": "^19.0.7",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0",
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "typescript": "~5.8.2"
   },
   "devDependencies": {
-    "@angular/build": "^20.0.3",
-    "@angular/cli": "^20.0.3",
-    "@angular/compiler-cli": "^20.0.0",
     "@types/jasmine": "~5.1.0",
     "@types/moment": "^2.11.29",
     "jasmine-core": "~5.7.0",
@@ -35,8 +36,7 @@
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.8.2"
+    "karma-jasmine-html-reporter": "~2.1.0"
   },
   "engines": {
     "node": ">=18.0.0"

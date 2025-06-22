@@ -1,0 +1,10 @@
+node_modules
+.git
+.gitignore
+README.md
+.railwayignore
+*.log
+.DS_Store
+.angular
+coverage
+.nyc_output 
